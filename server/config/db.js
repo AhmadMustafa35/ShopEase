@@ -9,9 +9,11 @@ const connectDB = async () => {
 
   try {
     const uri = process.env.MONGO_URI || 'mongodb://localhost:27017/shopease';
-    const conn = await mongoose.connect(uri);
+    const conn = await mongoose.connect(uri, {
+      dbName: 'shopease',
+    });
     isConnected = true;
-    console.log(`MongoDB Connected: ${conn.connection.host}`);
+    console.log(`MongoDB Connected: ${conn.connection.host}, Database: ${conn.connection.name}`);
   } catch (error) {
     console.error(`MongoDB Connection Error: ${error.message}`);
     if (!process.env.VERCEL) {
