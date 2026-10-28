@@ -6,6 +6,7 @@ const morgan = require('morgan');
 const dotenv = require('dotenv');
 
 // Load environment variables
+dotenv.config({ path: path.join(__dirname, '.env') });
 dotenv.config();
 
 const connectDB = require('./config/db');
