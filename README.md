@@ -191,6 +191,21 @@ Pending → Confirmed → Processing → Shipped → Delivered
 |------|-------|----------|
 | Admin | admin@shopease.com | admin123 |
 | Customer | john@example.com | password123 |
+## Deployment
+
+### Render (Full-Stack Deployment)
+1. Link your GitHub repository in Render as a **Web Service**.
+2. **Build Command**: `npm install; npm run build`
+3. **Start Command**: `npm start`
+4. **Environment Variables**:
+   - `MONGO_URI`: Your MongoDB Atlas connection string (`mongodb+srv://...`)
+   - `JWT_SECRET`: A secure JWT secret key
+   - `NODE_ENV`: `production`
+
+### Vercel Deployment
+1. Import the repository on [Vercel](https://vercel.com/new).
+2. Add environment variables: `MONGO_URI`, `JWT_SECRET`, and `NODE_ENV=production`.
+3. Click **Deploy**.
 
 ## License
 
